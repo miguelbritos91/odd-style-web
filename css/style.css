@@ -219,6 +219,16 @@
         background: url(../img/recursos/contact-email.jpg) no-repeat;
         background-size: cover;
     }
+    .nav-contacto{
+        list-style: none;
+    }
+    .nav-contacto li{
+        display: inline;
+        margin-right: 10px;
+    }
+    .nav-contacto li a{
+        text-decoration: none;
+    }
     .contenedor-form{
         background: rgba(0, 0, 0, 0.75);
         padding-top: 70px;
