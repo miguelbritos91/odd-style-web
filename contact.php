@@ -1,4 +1,5 @@
 <?php
+    header('Access-Control-Allow-Origin: https://www.style-web.net');
     header('Content-Type: application/json');
     $name=$_POST['cont-name'];
     $email=$_POST['cont-mail'];
