@@ -1,5 +1,5 @@
 <?php
-    header('Access-Control-Allow-Origin: https://www.style-web.net');
+    header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
     $name=$_POST['cont-name'];
     $email=$_POST['cont-mail'];
@@ -15,7 +15,7 @@
         $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
         $arr=json_decode($response, true);
         if($arr['success']){
-            $confirm = "El captcha se verificó correctamente.";
+            $confirm = "Mensaje enviado correctamente.";
         }else{
             $confirm = "Error! el captcha no es valido.";
         }
