@@ -91,7 +91,7 @@ formularioNew.addEventListener('submit',function(e){
     console.log(datos);
     console.log(datos.get('cont-name'));
     document.getElementById('resp-contact').innerHTML = '<div class="alert alert-info alert-dismissible fade show" role="alert" id="mensaje-alerta"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
-    fetch('contact.php',{method:'POST',body:datos})
+    fetch('https://styleweb-ar.000webhostapp.com/contact.php',{method:'POST',body:datos})
     .then(res=>res.json())
     .then(data=>{
         console.log(data)
