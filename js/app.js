@@ -90,11 +90,17 @@ formularioNew.addEventListener('submit',function(e){
     var datos=new FormData(formularioNew);
     console.log(datos);
     console.log(datos.get('cont-name'));
-    document.getElementById('resp-contact').innerHTML = '<div class="alert alert-info alert-dismissible fade show" role="alert" id="mensaje-alerta"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+    document.getElementById('resp-contact').innerHTML = '<div class="alert alert-dismissible fade show" role="alert" id="mensaje-alerta"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
     fetch('https://styleweb-ar.000webhostapp.com/contact.php',{method:'POST',body:datos})
     .then(res=>res.json())
     .then(data=>{
-        console.log(data)
+        if(data === 'Mensaje enviado correctamente.'){
+            document.getElementById('mensaje-alerta').classList.remove('alert-danger');
+            document.getElementById('mensaje-alerta').classList.add('alert-success');    
+        }else{
+            document.getElementById('mensaje-alerta').classList.add('alert-danger');
+            document.getElementById('mensaje-alerta').classList.remove('alert-success');
+        }
         document.getElementById('mensaje-alerta').innerHTML += '<strong>'+data+'</strong>'
         document.getElementById('mensaje-alerta').style.display='block'
     })
